@@ -63,7 +63,7 @@ export default ({
   text,
 }) => [
   'TEL',
-  `;VALUE=${uri ? 'uri' : 'text'}`,
+  uri && ';VALUE=uri',
   formatPref(pref),
   formatType(type),
   ':',

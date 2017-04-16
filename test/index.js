@@ -119,8 +119,8 @@ TITLE:CEO
 ROLE:Executive
 EMAIL;PREF=1;TYPE=work:john@mycompany.com
 EMAIL;PREF=2;TYPE=home:johndoe@example.com
-TEL;VALUE=text;PREF=1;TYPE=work:1 (234) 567-8901
-TEL;VALUE=text;PREF=2:(123) 123-1234
+TEL;PREF=1;TYPE=work:1 (234) 567-8901
+TEL;PREF=2:(123) 123-1234
 TEL;VALUE=uri;PREF=3:tel:1234567890
 ADR;PREF=1;TYPE=work:;;123 Forbes Ave\\, Apt 1;San Francisco;CA;12345;USA
 ADR;PREF=2;TYPE=home:;;456 Home St;Homeland;CA;23456;USA
