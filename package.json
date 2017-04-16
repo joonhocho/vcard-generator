@@ -1,0 +1,53 @@
+{
+  "name": "vcard-generator",
+  "version": "0.0.1",
+  "description": "VCard v4.0 rfc6350 compliant generator from JSON.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "build-watch": "babel src --watch --out-dir lib",
+    "clear": "rm -rf ./lib ./coverage ./.nyc_output",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "nyc": "nyc npm test && nyc report --reporter=lcov",
+    "retest": "npm run clear && npm test",
+    "pretest": "npm run build",
+    "start": "npm test",
+    "test": "mocha",
+    "test-watch": "mocha --watch",
+    "update-D": "npm install --save-dev babel-cli@latest babel-preset-es2015@latest babel-preset-stage-0@latest babel-register@latest chai@latest chai-as-promised@latest coveralls@latest mocha@latest nyc@latest",
+    "watch": "npm run build-watch & npm run test-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonhocho/vcard-generator.git"
+  },
+  "keywords": [
+    "vcard",
+    "4.0",
+    "rfc",
+    "rfc6350",
+    "generator",
+    "json"
+  ],
+  "author": "Joon Ho Cho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joonhocho/vcard-generator/issues"
+  },
+  "homepage": "https://github.com/joonhocho/vcard-generator#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.13.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0"
+  }
+}
