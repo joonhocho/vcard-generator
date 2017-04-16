@@ -130,7 +130,7 @@ X-PHONETIC-LAST-NAME:PhoneticLastName
 X-PRONUNCIATION-FIRST-NAME:PronunciationFirstName
 X-PRONUNCIATION-MIDDLE-NAME:PronunciationMiddleName
 X-PRONUNCIATION-LAST-NAME:PronunciationLastName
-ORG:My Company\\, Inc.
+ORG:My Company\, Inc.
 TITLE:CEO
 ROLE:Executive
 EMAIL;PREF=1;TYPE=work:john@mycompany.com
@@ -138,7 +138,7 @@ EMAIL;PREF=2;TYPE=home:johndoe@example.com
 TEL;PREF=1;TYPE=work:1 (234) 567-8901
 TEL;PREF=2:(123) 123-1234
 TEL;VALUE=uri;PREF=3:tel:1234567890
-ADR;PREF=1;TYPE=work:;;123 Forbes Ave\\, Apt 1;San Francisco;CA;12345;USA
+ADR;PREF=1;TYPE=work:;;123 Forbes Ave\, Apt 1;San Francisco;CA;12345;USA
 ADR;PREF=2;TYPE=home:;;456 Home St;Homeland;CA;23456;USA
 X-SOCIALPROFILE;PREF=1;TYPE=facebook:http://www.facebook.com/johndoe
 X-SOCIALPROFILE;PREF=2;TYPE=twitter;x-user=johnie:x-apple:johnie
@@ -148,7 +148,7 @@ PHOTO;PREF=1;TYPE=work:https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-
 PHOTO;PREF=2;TYPE=home:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAD///+l2Z/dAAAAM0lEQVR4nGP4/5/h/1+G/58ZDrAz3D/McH8yw83NDDeNGe4Ug9C9zwz3gVLMDA/A6P9/AFGGFyjOXZtQAAAAAElFTkSuQmCC
 BDAY:20000131
 GENDER:M
-NOTE;PREF=1:John Doe has a long and varied history\\, being documented on more police files that anyone else.\\nReports of his death are alas numerous.
+NOTE;PREF=1:John Doe has a long and varied history\, being documented on more police files that anyone else.\nReports of his death are alas numerous.
 NOTE;PREF=2:Another note.
 END:VCARD
 ```
