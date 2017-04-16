@@ -83,6 +83,5 @@ export default ({
   formatType(type),
   user && `;x-user=${encodeText(user)}`,
   ':',
-  encodeText(uri),
-  user && `x-apple:${encodeText(user)}`,
+  encodeText(uri) || user && `x-apple:${encodeText(user)}`,
 ].filter(isSet).join('');

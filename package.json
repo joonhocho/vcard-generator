@@ -1,6 +1,6 @@
 {
   "name": "vcard-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VCard v4.0 rfc6350 compliant generator from JSON.",
   "main": "lib/index.js",
   "directories": {

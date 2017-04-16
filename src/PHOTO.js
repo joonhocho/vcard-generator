@@ -32,6 +32,5 @@ export default ({
   formatPref(pref),
   formatType(type),
   ':',
-  uri && encodeText(uri),
-  dataUri,
+  dataUri || uri && encodeText(uri),
 ].filter(isSet).join('');
