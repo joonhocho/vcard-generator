@@ -2,10 +2,12 @@ import {describe, it} from 'mocha';
 import {expect} from 'chai';
 import vcard from '../lib';
 
+const {generate} = vcard;
+
 
 describe('vcard', () => {
   it('generates vcard', () => {
-    expect(vcard({
+    expect(generate({
       name: {
         familyName: 'Doe',
         givenName: 'John',
