@@ -19,7 +19,7 @@ npm install --save vcard-generator
 ```javascript
 import vcard from 'vcard-generator';
 
-const vcardContent = vcard({
+const vcardContent = vcard.generate({
   name: {
     familyName: 'Doe',
     givenName: 'John',
