@@ -21,7 +21,7 @@ const listWithPref = (list, fn) => {
 };
 
 export default ({
-  version = '4.0',
+  version,
 
   name,
   formattedNames,
@@ -42,9 +42,9 @@ export default ({
   notes,
 }) => [
   'BEGIN:VCARD',
-  `VERSION:${version}`,
+  `VERSION:${version || '4.0'}`,
 
-  N(name),
+  name && N(name),
   listWithPref(formattedNames, FN),
   listWithPref(nicknames, NICKNAME),
   extraName && XNAME(extraName),
