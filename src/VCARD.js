@@ -28,7 +28,10 @@ export default ({
   nicknames,
   extraName,
 
+  organizations,
+  jobs,
   works,
+
   emails,
   phones,
   addresses,
@@ -49,7 +52,10 @@ export default ({
   listWithPref(nicknames, NICKNAME),
   extraName && XNAME(extraName),
 
+  listWithPref(organizations, WORK),
+  listWithPref(jobs, WORK),
   listWithPref(works, WORK),
+
   listWithPref(emails, EMAIL),
   listWithPref(phones, TEL),
   listWithPref(addresses, ADR),

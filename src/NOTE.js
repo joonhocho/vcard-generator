@@ -23,10 +23,11 @@ export default ({
   pref,
   type,
   text,
+  value,
 }) => [
   'NOTE',
   formatPref(pref),
   formatType(type),
   ':',
-  encodeText(text),
+  encodeText(text || value),
 ].filter(isSet).join('');

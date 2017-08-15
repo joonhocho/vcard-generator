@@ -28,10 +28,11 @@ export default ({
   pref,
   type,
   text,
+  value,
 }) => [
   'FN',
   formatPref(pref),
   formatType(type),
   ':',
-  encodeText(text),
+  encodeText(text || value),
 ].filter(isSet).join('');

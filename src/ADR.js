@@ -17,15 +17,15 @@ ADR;WORK;CHARSET=utf-8:;;738 tuhbenaran Ave, Apt 123;Mountain View;California;94
 
 ADR;type=HOME;type=pref:;;124 st\n234;City;Ca;98765;United States
 
-item2.ADR;type=HOME;type=pref:;;733 Catamaran St\nApt 4;Foster City;CA;94404;United States
+item2.ADR;type=HOME;type=pref:;;123 Catamaran St\nApt 1234;San Francisco;CA;12345;United States
 item2.X-ABADR:us
 
-item3.ADR;type=WORK:;;이매동 이매촌 아름마을 태영아파트\n123동 102호;성남시;경기도;123-456;South Korea
+item3.ADR;type=WORK:;;정자동 대림아파트\n123동 102호;성남시;경기도;123-456;South Korea
 item3.X-ABADR:kr
 
 ADR:;;Physical Address;;;;
 
-ADR;HOME:;;700 Catamaran St;;;;
+ADR;HOME:;;700 Jameson St;;;;
 
 */
 import {
@@ -39,28 +39,33 @@ import {
 
 export default ({
   geo,
-  label,
   type,
+  label,
   pref,
   pobox, // recommended to be empty
   ext, // recommended to be empty
   street,
   locality,
+  city,
   region,
+  state,
   code,
+  postalCode,
   country,
+  formatted,
+  multiline,
 }) => [
   'ADR',
   geo && `;GEO="geo:${encodeQuotedText(geo)}"`,
-  label && `;LABEL="${encodeQuotedText(label)}"`,
+  (formatted || multiline) && `;LABEL="${encodeQuotedText(formatted || multiline)}"`,
   formatPref(pref),
-  formatType(type),
+  formatType(type || label),
   ':',
   `${encodeText(pobox)};`,
   `${encodeText(ext)};`,
   `${encodeText(street)};`,
-  `${encodeText(locality)};`,
-  `${encodeText(region)};`,
-  `${encodeText(code)};`,
+  `${encodeText(locality || city)};`,
+  `${encodeText(region || state)};`,
+  `${encodeText(code || postalCode)};`,
   encodeText(country),
 ].filter(isSet).join('');

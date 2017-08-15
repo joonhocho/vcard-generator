@@ -75,13 +75,21 @@ import {
 export default ({
   pref,
   type,
+  label,
+  service,
   user,
+  username,
+  userId,
   uri,
-}) => [
-  'X-SOCIALPROFILE',
-  formatPref(pref),
-  formatType(type),
-  user && `;x-user=${encodeText(user)}`,
-  ':',
-  encodeText(uri) || user && `x-apple:${encodeText(user)}`,
-].filter(isSet).join('');
+  url,
+}) => {
+  const userArg = user || username || userId;
+  return [
+    'X-SOCIALPROFILE',
+    formatPref(pref),
+    formatType(type || label || service),
+    userArg && `;x-user=${encodeText(userArg)}`,
+    ':',
+    encodeText(uri || url) || userArg && `x-apple:${encodeText(userArg)}`,
+  ].filter(isSet).join('');
+};

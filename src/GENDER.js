@@ -26,9 +26,10 @@ import {
 export default ({
   sex,
   text,
+  value,
 }) => [
   'GENDER',
   ':',
   formatGender(sex),
-  text && `;${encodeText(text)}`,
+  (text || value) && `;${encodeText(text || value)}`,
 ].filter(isSet).join('');

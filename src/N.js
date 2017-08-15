@@ -21,16 +21,18 @@ import {
 
 
 export default ({
-  familyName,
   givenName,
+  firstName,
   middleName,
+  familyName,
+  lastName,
   prefix,
   suffix,
 }) => [
   'N',
   ':',
-  encodeText(familyName),
-  `;${encodeText(givenName)}`,
+  encodeText(familyName || lastName),
+  `;${encodeText(givenName || firstName)}`,
   `;${encodeText(middleName)}`,
   `;${encodeTextList(prefix)}`,
   `;${encodeTextList(suffix)}`,

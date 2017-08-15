@@ -37,11 +37,13 @@ import {
 export default ({
   pref,
   type,
+  label,
   text,
+  value,
 }) => [
   'EMAIL',
   formatPref(pref),
-  formatType(type),
+  formatType(type || label),
   ':',
-  encodeText(text),
+  encodeText(text || value),
 ].filter(isSet).join('');

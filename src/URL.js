@@ -38,11 +38,14 @@ import {
 export default ({
   pref,
   type,
+  label,
   uri,
+  url,
+  value,
 }) => [
   'URL',
   formatPref(pref),
-  formatType(type),
+  formatType(type || label),
   ':',
-  encodeText(uri),
+  encodeText(uri || url || value),
 ].filter(isSet).join('');

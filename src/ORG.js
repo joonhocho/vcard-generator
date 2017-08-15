@@ -26,10 +26,11 @@ export default ({
   pref,
   type,
   text,
+  value,
 }) => [
   'ORG',
   formatPref(pref),
   formatType(type),
   ':',
-  encodeTextList(text, ';'),
+  encodeTextList(text || value, ';'),
 ].filter(isSet).join('');

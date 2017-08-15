@@ -23,10 +23,11 @@ export default ({
   pref,
   type,
   text,
+  value,
 }) => [
   'NICKNAME',
   formatPref(pref),
   formatType(type),
   ':',
-  encodeTextList(text),
+  encodeTextList(text || value),
 ].filter(isSet).join('');

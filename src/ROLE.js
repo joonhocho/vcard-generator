@@ -21,10 +21,11 @@ export default ({
   pref,
   type,
   text,
+  value,
 }) => [
   'ROLE',
   formatPref(pref),
   formatType(type),
   ':',
-  encodeText(text),
+  encodeText(text || value),
 ].filter(isSet).join('');

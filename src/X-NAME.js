@@ -22,21 +22,29 @@ import {
 export default ({
   maidenName,
 
+  phoneticGivenName,
   phoneticFirstName,
   phoneticMiddleName,
+  phoneticFamilyName,
   phoneticLastName,
 
+  pronunciationGivenName,
   pronunciationFirstName,
   pronunciationMiddleName,
+  pronunciationFamilyName,
   pronunciationLastName,
 }) => [
   maidenName && `X-MAIDENNAME:${encodeText(maidenName)}`,
 
-  phoneticFirstName && `X-PHONETIC-FIRST-NAME:${encodeText(phoneticFirstName)}`,
+  (phoneticGivenName || phoneticFirstName) &&
+    `X-PHONETIC-FIRST-NAME:${encodeText(phoneticGivenName || phoneticFirstName)}`,
   phoneticMiddleName && `X-PHONETIC-MIDDLE-NAME:${encodeText(phoneticMiddleName)}`,
-  phoneticLastName && `X-PHONETIC-LAST-NAME:${encodeText(phoneticLastName)}`,
+  (phoneticFamilyName || phoneticLastName) &&
+    `X-PHONETIC-LAST-NAME:${encodeText(phoneticFamilyName || phoneticLastName)}`,
 
-  pronunciationFirstName && `X-PRONUNCIATION-FIRST-NAME:${encodeText(pronunciationFirstName)}`,
+  (pronunciationGivenName || pronunciationFirstName) &&
+    `X-PRONUNCIATION-FIRST-NAME:${encodeText(pronunciationGivenName || pronunciationFirstName)}`,
   pronunciationMiddleName && `X-PRONUNCIATION-MIDDLE-NAME:${encodeText(pronunciationMiddleName)}`,
-  pronunciationLastName && `X-PRONUNCIATION-LAST-NAME:${encodeText(pronunciationLastName)}`,
+  (pronunciationFamilyName || pronunciationLastName) &&
+    `X-PRONUNCIATION-LAST-NAME:${encodeText(pronunciationFamilyName || pronunciationLastName)}`,
 ].filter(isSet).join('\n');

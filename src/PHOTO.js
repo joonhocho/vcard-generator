@@ -25,12 +25,15 @@ import {
 export default ({
   pref,
   type,
+  label,
   uri,
+  url,
+  value,
   dataUri,
 }) => [
   'PHOTO',
   formatPref(pref),
-  formatType(type),
+  formatType(type || label),
   ':',
-  dataUri || uri && encodeText(uri),
+  dataUri || (uri || url || value) && encodeText(uri || url || value),
 ].filter(isSet).join('');

@@ -15,10 +15,15 @@ export default ({
   pref,
   type,
   organization,
+  company,
   title,
   role,
+  department,
 }) => [
-  organization && ORG({pref, type, text: organization}),
-  title && TITLE({pref, type, text: title}),
-  role && ROLE({pref, type, text: role}),
+  (organization || company) &&
+    ORG({pref, type, text: organization || company}),
+  title &&
+    TITLE({pref, type, text: title}),
+  (role || department) &&
+    ROLE({pref, type, text: role || department}),
 ].filter(isSet).join('\n');

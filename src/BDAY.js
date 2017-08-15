@@ -34,12 +34,13 @@ import {
 
 export default ({
   text,
+  value,
   year,
   month,
   day,
 }) => [
   'BDAY',
-  text && ';VALUE=text',
+  (text || value) && ';VALUE=text',
   ':',
-  text || formatDate(year, month, day),
+  (text || value) || formatDate(year, month, day),
 ].filter(isSet).join('');

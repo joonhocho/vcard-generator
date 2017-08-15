@@ -59,13 +59,16 @@ import {
 export default ({
   pref,
   type,
+  label,
   uri,
   text,
+  value,
+  number,
 }) => [
   'TEL',
   uri && ';VALUE=uri',
   formatPref(pref),
-  formatType(type),
+  formatType(type || label),
   ':',
-  encodeText(uri || text),
+  encodeText(uri || text || value || number),
 ].filter(isSet).join('');
